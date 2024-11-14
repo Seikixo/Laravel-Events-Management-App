@@ -51,10 +51,10 @@ class EventController extends Controller
     {
         $event->update(
             $request->validate([
-                'name' => 'required|string|max:255',
+                'name' => 'string|max:255',
                 'description' => 'nullable|string',
-                'start_time' => 'required|date',
-                'end_time' => 'required|date|after:start_time'
+                'start_time' => 'date',
+                'end_time' => 'date|after:start_time'
             ])
         );
 
